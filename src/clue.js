@@ -185,6 +185,12 @@ function revealMystery(envelope) {
 }
 
 
+function displayEnvelope() {
+  document.getElementById('envelope').innerHTML = `<p>${revealMystery(pickMystery())}</p>`;
+}
+
+displayEnvelope();
+
 // The following is required to make unit tests work.
 /* Environment setup. Do not modify the below code. */
 if (typeof module !== 'undefined') {
