@@ -163,15 +163,26 @@ weaponsArray.push(rope, knife, candlestick, dumbbell, poison, axe, bat, trophy, 
 
 // ITERATION 2
 
-function selectRandom() {}
+function selectRandom(arr) {
+  return arr[Math.floor(Math.random() * arr.length)];
+}
 
-function pickMystery() {}
+
+// returns an object with three properties: suspect, weapon and room:
+function pickMystery() {
+  return {
+    suspect: selectRandom(suspectsArray), 
+    weapon: selectRandom(weaponsArray), 
+    room: selectRandom(roomsArray)
+  };
+} 
 
 
 // ITERATION 3
 
-function revealMystery() {}
-
+function revealMystery(envelope) {
+  return `${envelope.suspect.firstName} ${envelope.suspect.lastName} killed Mr. Boddy using the ${envelope.weapon.name} in the ${envelope.room.name}!`;
+}
 
 
 // The following is required to make unit tests work.
